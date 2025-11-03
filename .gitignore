@@ -1,0 +1,31 @@
+# 데이터 파일 (용량/공유 제한)
+data/
+*.csv
+
+# 학습된 모델 파일
+model/
+*.pkl
+*.joblib
+*.cbm
+
+# 예측 결과, 출력물
+output/
+*.png
+*.jpg
+*.pdf
+
+# CatBoost 로그
+catboost_info/
+
+# Python/Jupyter 관련 캐시
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+
+# IDE 설정 파일 (PyCharm, VSCode 등)
+.idea/
+.vscode/
+
+# 기타
+*.log
+.DS_Store
