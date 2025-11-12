@@ -33,7 +33,7 @@
                    ↑
               불균형 비율: 약 1:34
 ```
-![alt text](image-1.png)
+<img width="2637" height="973" alt="image" src="https://github.com/user-attachments/assets/5dc7f4e2-61f3-4b55-b594-16d8a9532daf" />
 #### 2. 복잡한 컬럼 구조 및 컬럼명 정규화
 - **원본 하이픈 패턴**: `A1-1`, `A1-2`, `A1-3`, `A1-4` → 의미 파악 어려움
 - **정규화된 컬럼명**: `A1_Direction`, `A1_Speed`, `A1_Response`, `A1_ResponseTime`
@@ -139,15 +139,15 @@ B_FEATURE_COLUMNS = [
 | **총 합계** | 79개 | 심리학적 의미 기반 설계 |
 
 **핵심 피처군**:
-- ✅ 반응 정확도 (Accuracy)
-- ✅ 반응 시간 (Response Time)
-- ✅ 일치/불일치 조건 격차 (Gap)
-- ✅ 변화 탐지 능력
-- ✅ 정서 안정성 지표
+- 반응 정확도 (Accuracy)
+- 반응 시간 (Response Time)
+- 일치/불일치 조건 격차 (Gap)
+- 변화 탐지 능력
+- 정서 안정성 지표
 
 ---
 
-## ⚡ 성능 최적화 및 설계 전략
+## 성능 최적화 및 설계 전략
 
 ### 1. 컬럼명 정규화: 가독성과 의미 명확화
 
@@ -221,10 +221,7 @@ features = pd.concat([features, pd.DataFrame(new_cols_dict)], axis=1)
 ```
 처리 시간 비교:
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-Before (행 루프):
-  A 검사: ~수 시간
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-After (벡터화):
+(벡터화):
   A 검사: 415.6초 (~7분)   ⚡ 10배+ 향상
   B 검사: 108.4초 (~2분)   ⚡ 10배+ 향상
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
@@ -269,6 +266,7 @@ CatBoostClassifier(
 ```
 
 #### 방법 2: Threshold 최적화 (다중 기준)
+<img width="3568" height="1768" alt="image" src="https://github.com/user-attachments/assets/243fe5f2-a34d-425a-97a7-8e72c8af9b79" />
 
 ```
 Threshold Sweep (0.01 ~ 0.99):
@@ -287,16 +285,17 @@ Threshold Sweep (0.01 ~ 0.99):
 ```
 
 ### 3. 모델 구성
-![alt text](image-8.png)
+<img width="1790" height="490" alt="image" src="https://github.com/user-attachments/assets/55ac5904-8408-477a-9b04-546825cc5ef7" />
 #### CatBoost
-![alt text](image-5.png)
+<img width="1389" height="490" alt="image" src="https://github.com/user-attachments/assets/e4d17619-301f-4526-9007-6c16ba52541a" />
 #### XGBoost Baseline
-![alt text](image-6.png)
+<img width="1389" height="490" alt="image" src="https://github.com/user-attachments/assets/3bc62538-8ebd-41ec-98dc-a27e32416008" />
 #### LightGBM
-![alt text](image-7.png)
+<img width="1389" height="490" alt="image" src="https://github.com/user-attachments/assets/60446af5-26bd-4ec3-82c5-cd7c09232263" />
 
-![alt text](image-2.png)
-![alt text](image-4.png)
+<img width="1489" height="1189" alt="image" src="https://github.com/user-attachments/assets/bb2d8c52-81bc-403d-a3df-cb9060e4a349" />
+<img width="1389" height="490" alt="image" src="https://github.com/user-attachments/assets/1326b5dc-6b81-4568-adf7-8581e30d93cb" />
+
 Base Models (각 5-Fold):
   ┌────────────────────────────────┐
   │  CatBoost   (OOF AUC: 0.6381)  │
@@ -318,7 +317,7 @@ Base Models (각 5-Fold):
 
 ### 최종 성과 요약
 
-![alt text](image-11.png)
+<img width="2969" height="1768" alt="image" src="https://github.com/user-attachments/assets/0cf0280b-b473-4b3c-a8d3-1f4b2df4c561" />
 
 | 모델 | OOF ROC AUC | 특징 | 
 |------|-------------|------|
@@ -387,13 +386,12 @@ F1 Score:     0.0789
 ---
 
 ## 시각화 자료
-![alt text](image-3.png)
+<img width="2969" height="1768" alt="image" src="https://github.com/user-attachments/assets/1d4a1ac7-028c-4154-9c11-4c7dc939639f" />
 ### 1. 피처 중요도 (Top 20)
 
 ```
 Feature Importance (평균 - 5 Folds):
-![alt text](image-10.png)
-
+<img width="2970" height="2968" alt="image" src="https://github.com/user-attachments/assets/e71b5067-d7e7-41ec-8d75-57ef19ece7b0" />
 
 ```
 주요 인사이트:
@@ -417,17 +415,6 @@ Label = 1 (위험):   27,280건 (2.89%)
 불균형 비율: 1:34
 → 불균형 처리 필수 (Auto Class Weights, Threshold 최적화)
 ```
-
-### 3. Threshold vs Metrics
-
-```
-Threshold 변화에 따른 성능 지표:
-
-![alt text](image-9.png)
-
-### 4. 모델 앙상블 구조
-
-
 
 ---
 
@@ -530,8 +517,7 @@ Threshold 변화에 따른 성능 지표:
 | 2 | `submission_cv_mean.csv` | CV 5-Fold 평균 | 0.6381 | 안정적, 일반화 우수 |
 | 3 | `submission.csv` | Baseline | 0.6384 | 단순, 빠른 추론 |
 | 4 | `submission_cv_weighted.csv` | CV F1 가중 | 0.6381 | Mean과 유사 |
-
-![alt text](image.png)
+<img width="1455" height="906" alt="image" src="https://github.com/user-attachments/assets/13fd32b7-2234-4d3d-a908-dd70dab00976" />
 ---
 
 ## 향후 개선 방향
@@ -567,13 +553,13 @@ Threshold 변화에 따른 성능 지표:
 ## 📝 결론
 
 ### 프로젝트 성과
-✅ 극심한 불균형 문제 해결 (1:34 비율)  
-✅ 복잡한 데이터 구조 파싱 및 컬럼명 정규화 성공  
-✅ 심리학적 의미 기반 피처 설계 (79개 핵심 피처)  
-✅ 성능 최적화 달성 (피처 생성 10배+ 속도 향상)  
-✅ 경쟁력 있는 모델 구축 (ROC AUC 0.6385)  
-✅ 해석 가능한 모델 (피처 중요도 분석)  
-✅ 재현 가능한 파이프라인 완성  
+극심한 불균형 문제 해결 (1:34 비율)  
+복잡한 데이터 구조 파싱 및 컬럼명 정규화 성공  
+심리학적 의미 기반 피처 설계 (79개 핵심 피처)  
+성능 최적화 달성 (피처 생성 10배+ 속도 향상)  
+경쟁력 있는 모델 구축 (ROC AUC 0.6385)  
+해석 가능한 모델 (피처 중요도 분석)  
+재현 가능한 파이프라인 완성  
 
 
 ---
@@ -591,7 +577,6 @@ Python 3.x
 └─ matplotlib, seaborn    (시각화)
 ```
 
-
 ---
 
 ## 👥 프로젝트 정보
@@ -602,5 +587,3 @@ Python 3.x
 **최종 성과**: ROC AUC 0.6385  
 
 ---
-
-
