@@ -387,20 +387,17 @@ F1 Score:     0.0789
 
 ## 시각화 자료
 <img width="2969" height="1768" alt="image" src="https://github.com/user-attachments/assets/1d4a1ac7-028c-4154-9c11-4c7dc939639f" />
-### 1. 피처 중요도 (Top 20)
 
-```
+### 1. 피처 중요도 (Top 20)
 Feature Importance (평균 - 5 Folds):
 <img width="2970" height="2968" alt="image" src="https://github.com/user-attachments/assets/e71b5067-d7e7-41ec-8d75-57ef19ece7b0" />
 
-```
-주요 인사이트:
-✓ A3_ResponseTime (시각 탐색 반응시간)이 가장 중요
-✓ A6_zscore (판단 능력 표준점수) 중요
-✓ Gap 피처 (조건 간 격차) 상위권
-✓ 일관성 지표가 사고 위험 예측에 효과적
-```
-```
+**주요 인사이트:**
+A3_ResponseTime (시각 탐색 반응시간)이 가장 중요
+A6_zscore (판단 능력 표준점수) 중요
+Gap 피처 (조건 간 격차) 상위권
+일관성 지표가 사고 위험 예측에 효과적
+
 
 ### 2. 클래스 분포
 
@@ -517,6 +514,7 @@ Label = 1 (위험):   27,280건 (2.89%)
 | 2 | `submission_cv_mean.csv` | CV 5-Fold 평균 | 0.6381 | 안정적, 일반화 우수 |
 | 3 | `submission.csv` | Baseline | 0.6384 | 단순, 빠른 추론 |
 | 4 | `submission_cv_weighted.csv` | CV F1 가중 | 0.6381 | Mean과 유사 |
+
 <img width="1455" height="906" alt="image" src="https://github.com/user-attachments/assets/13fd32b7-2234-4d3d-a908-dd70dab00976" />
 ---
 
@@ -548,7 +546,6 @@ Label = 1 (위험):   27,280건 (2.89%)
 - **Partial Dependence**: 피처 영향 분석
 - **Feature Interaction**: 상호작용 발견
 
----
 
 ## 📝 결론
 
@@ -562,11 +559,10 @@ Label = 1 (위험):   27,280건 (2.89%)
 재현 가능한 파이프라인 완성  
 
 
----
-
 ## 📚 기술 스택
 
 ### 프로그래밍 & 프레임워크
+
 ```
 Python 3.x
 ├─ pandas, numpy          (데이터 처리)
