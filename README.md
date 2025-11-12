@@ -34,6 +34,7 @@
               불균형 비율: 약 1:34
 ```
 <img width="2637" height="973" alt="image" src="https://github.com/user-attachments/assets/5dc7f4e2-61f3-4b55-b594-16d8a9532daf" />
+
 #### 2. 복잡한 컬럼 구조 및 컬럼명 정규화
 - **원본 하이픈 패턴**: `A1-1`, `A1-2`, `A1-3`, `A1-4` → 의미 파악 어려움
 - **정규화된 컬럼명**: `A1_Direction`, `A1_Speed`, `A1_Response`, `A1_ResponseTime`
@@ -279,21 +280,29 @@ Threshold Sweep (0.01 ~ 0.99):
 ```
 
 ### 3. 모델 구성
+
 <img width="1790" height="490" alt="image" src="https://github.com/user-attachments/assets/55ac5904-8408-477a-9b04-546825cc5ef7" />
+
 #### CatBoost
+
 <img width="1389" height="490" alt="image" src="https://github.com/user-attachments/assets/e4d17619-301f-4526-9007-6c16ba52541a" />
+
 #### XGBoost Baseline
+
 <img width="1389" height="490" alt="image" src="https://github.com/user-attachments/assets/3bc62538-8ebd-41ec-98dc-a27e32416008" />
+
 #### LightGBM
+
 <img width="1389" height="490" alt="image" src="https://github.com/user-attachments/assets/60446af5-26bd-4ec3-82c5-cd7c09232263" />
 
 <img width="1489" height="1189" alt="image" src="https://github.com/user-attachments/assets/bb2d8c52-81bc-403d-a3df-cb9060e4a349" />
+
 <img width="1389" height="490" alt="image" src="https://github.com/user-attachments/assets/1326b5dc-6b81-4568-adf7-8581e30d93cb" />
 
 Base Models (각 5-Fold):
+
 <img width="283" height="242" alt="스크린샷 2025-11-12 오후 5 50 44" src="https://github.com/user-attachments/assets/96d2648b-f964-46a9-9f3a-78b3da107a7b" />
 
-```
 
 ---
 
